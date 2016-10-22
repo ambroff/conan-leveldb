@@ -31,7 +31,7 @@ If you handle multiple dependencies in your project is better to add a *conanfil
     leveldb/1.19@lasote/stable
 
     [options]
-    leveldb:shared=true # false
+    leveldb:shared=True # false
     # Take a look for all available options in conanfile.py
     
     [generators]

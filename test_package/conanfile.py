@@ -18,8 +18,9 @@ class LeveldbTestConan(ConanFile):
 
     def imports(self):
         self.copy("*.dll", "bin", "bin")
-        self.copy("*.dylib", "bin", "bin")
+        self.copy("*.so", "lib", "bin")
+        self.copy("*.dylib", "lib", "bin")
 
     def test(self):
         os.chdir("bin")
-        self.run(".%sexample" % os.sep)
+        self.run("LD_LIBRARY_PATH=$(pwd) && .%sexample" % os.sep)
